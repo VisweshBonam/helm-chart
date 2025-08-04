@@ -11,11 +11,12 @@ spec:
     matchLabels:
       project: roboshop
       tier: app
-  spec:
+  template:
     metadata:
       labels:
         project: roboshop
         tier: app
-    containers:
-      - name: nginx
-        image: nginx:{{ .Values.deployment.imageVersion }}
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:{{ .Values.deployment.imageVersion }}
